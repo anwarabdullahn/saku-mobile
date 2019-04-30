@@ -90,8 +90,8 @@ class _LoginPage extends State<LoginPage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(40)),
                   gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
                     colors: [
                       Color(0xFFD985D1),
                       Color(0xFF5F2FD1),
