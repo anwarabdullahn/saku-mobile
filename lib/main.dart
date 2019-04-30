@@ -10,11 +10,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.lime,
+        primarySwatch: Colors.deepPurple,
       ),
-      routes: {
-        '/' : (BuildContext context) => LoginPage()
-      },
+      routes: {'/': (BuildContext context) => LoginPage()},
     );
   }
 }

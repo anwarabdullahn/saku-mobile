@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:saku_mobile/widgets/Input.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -39,18 +40,17 @@ class _LoginPage extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                Spacer(),
                 Align(
                   alignment: Alignment.center,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 32),
-                    child:
-                        Icon(Icons.access_time, color: Colors.white, size: 100),
-                  ),
+                  child:
+                      Icon(Icons.access_time, color: Colors.white, size: 100),
                 ),
+                Spacer(),
                 Align(
                     alignment: Alignment.bottomRight,
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 32, right: 32),
+                      padding: const EdgeInsets.only(right: 32, bottom: 25),
                       child: Text(
                         'Login',
                         style: TextStyle(color: Colors.white, fontSize: 24),
@@ -58,7 +58,22 @@ class _LoginPage extends State<LoginPage> {
                     ))
               ],
             ),
-          )
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 32),
+            child: Input(
+                inputText: 'Email',
+                inputIcon: Icon(Icons.email, color: Colors.grey),
+                inputType: TextInputType.emailAddress),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 15),
+            child: Input(
+                inputText: 'Password',
+                inputIcon: Icon(Icons.vpn_key, color: Colors.grey),
+                inputType: TextInputType.emailAddress,
+                isPassword: true),
+          ),
         ],
       ),
     ));
