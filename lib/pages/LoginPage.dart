@@ -59,21 +59,57 @@ class _LoginPage extends State<LoginPage> {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 32),
-            child: Input(
-                inputText: 'Email',
-                inputIcon: Icon(Icons.email, color: Colors.grey),
-                inputType: TextInputType.emailAddress),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 15),
-            child: Input(
-                inputText: 'Password',
-                inputIcon: Icon(Icons.vpn_key, color: Colors.grey),
-                inputType: TextInputType.emailAddress,
-                isPassword: true),
-          ),
+          Expanded(
+              child: ListView(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(top: 20),
+                child: Input(
+                    inputText: 'Email',
+                    inputIcon: Icon(Icons.email, color: Colors.grey),
+                    inputType: TextInputType.emailAddress),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 15),
+                child: Input(
+                    inputText: 'Password',
+                    inputIcon: Icon(Icons.vpn_key, color: Colors.grey),
+                    inputType: TextInputType.emailAddress,
+                    isPassword: true),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: FlatButton(
+                  child: Text('Forgot Password ?',
+                      style: TextStyle(color: Colors.grey)),
+                  onPressed: () {},
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(40)),
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xFFD985D1),
+                      Color(0xFF5F2FD1),
+                    ],
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Text(
+                      'Login',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ))
         ],
       ),
     ));
