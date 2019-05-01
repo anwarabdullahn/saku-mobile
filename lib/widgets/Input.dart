@@ -7,8 +7,8 @@ class Input extends StatelessWidget {
   final bool isPassword;
 
   Input(
-      {this.inputText,
-      this.inputIcon,
+      {@required this.inputText,
+      @required this.inputIcon,
       this.inputType = TextInputType.text,
       this.isPassword = false});
 

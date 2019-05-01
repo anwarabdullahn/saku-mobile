@@ -26,7 +26,7 @@ class _RegisterPage extends State<RegisterPage> {
         children: <Widget>[
           Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 2.5,
+            height: MediaQuery.of(context).size.height / 8,
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
@@ -40,22 +40,11 @@ class _RegisterPage extends State<RegisterPage> {
                     BorderRadius.only(bottomLeft: Radius.circular(90))),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Spacer(flex: 1),
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'assets/logo.png',
-                    height: 200,
-                    width: 200,
-                    fit: BoxFit.scaleDown,
-                  ),
-                ),
                 Align(
                     alignment: Alignment.bottomRight,
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 32, bottom: 20),
+                      padding: const EdgeInsets.only(right: 32),
                       child: Text(
                         'Sign Up',
                         style: TextStyle(color: Colors.white, fontSize: 24),
@@ -70,6 +59,20 @@ class _RegisterPage extends State<RegisterPage> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                 child: Input(
+                    inputText: 'First Name',
+                    inputIcon: Icon(Icons.person, color: Colors.grey),
+                    inputType: TextInputType.text),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 15),
+                child: Input(
+                    inputText: 'Last Name',
+                    inputIcon: Icon(Icons.person, color: Colors.grey),
+                    inputType: TextInputType.text),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 15),
+                child: Input(
                     inputText: 'Email',
                     inputIcon: Icon(Icons.email, color: Colors.grey),
                     inputType: TextInputType.emailAddress),
@@ -79,19 +82,20 @@ class _RegisterPage extends State<RegisterPage> {
                 child: Input(
                     inputText: 'Password',
                     inputIcon: Icon(Icons.vpn_key, color: Colors.grey),
-                    inputType: TextInputType.emailAddress,
+                    inputType: TextInputType.text,
                     isPassword: true),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: FlatButton(
-                  child: Text('Forgot Password ?',
-                      style: TextStyle(color: Colors.grey)),
-                  onPressed: () {},
-                ),
+              Container(
+                margin: EdgeInsets.only(top: 15),
+                child: Input(
+                    inputText: 'Phone',
+                    inputIcon: Icon(Icons.phone, color: Colors.grey),
+                    inputType: TextInputType.phone),
               ),
-              Button(text: 'Login', isPrimary: true, onPress: () {}),
-              Button(text: 'Dont Have an Account?', onPress: () {})
+              Button(text: 'Register', isPrimary: true, onPress: () {}),
+              Button(
+                  text: 'Have an Account?',
+                  onPress: () => Navigator.pop(context))
             ],
           ))
         ],
