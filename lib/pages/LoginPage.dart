@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:saku_mobile/widgets/Input.dart';
+import '../widgets/button.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -31,26 +32,30 @@ class _LoginPage extends State<LoginPage> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color(0xFFD985D1),
-                    Color(0xFF5F2FD1),
+                    Color(0xFF7AB1CE),
+                    Color(0xFF698DBE),
                   ],
                 ),
                 borderRadius:
                     BorderRadius.only(bottomLeft: Radius.circular(90))),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Spacer(),
+                Spacer(flex: 1),
                 Align(
                   alignment: Alignment.center,
-                  child:
-                      Icon(Icons.access_time, color: Colors.white, size: 100),
+                  child: Image.asset(
+                    'assets/logo.png',
+                    height: 200,
+                    width: 200,
+                    fit: BoxFit.scaleDown,
+                  ),
                 ),
-                Spacer(),
                 Align(
                     alignment: Alignment.bottomRight,
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 32, bottom: 25),
+                      padding: const EdgeInsets.only(right: 32, bottom: 20),
                       child: Text(
                         'Login',
                         style: TextStyle(color: Colors.white, fontSize: 24),
@@ -85,30 +90,8 @@ class _LoginPage extends State<LoginPage> {
                   onPressed: () {},
                 ),
               ),
-              Container(
-                margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                decoration: BoxDecoration(
-                  boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 5)],
-                  borderRadius: BorderRadius.all(Radius.circular(40)),
-                  gradient: LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                    colors: [
-                      Color(0xFFD985D1),
-                      Color(0xFF5F2FD1),
-                    ],
-                  ),
-                ),
-                child: Center(
-                  child: FlatButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Login',
-                      style: TextStyle(color: Colors.white, fontSize: 18),
-                    ),
-                  ),
-                ),
-              )
+              Button(text: 'Login', isPrimary: true),
+              Button(text: 'Dont Have an Account?')
             ],
           ))
         ],
