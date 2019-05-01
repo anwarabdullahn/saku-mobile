@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
+      debugShowCheckedModeBanner: false,
       routes: {
         '/': (BuildContext context) => LoginPage(),
         '/register': (BuildContext context) => RegisterPage()

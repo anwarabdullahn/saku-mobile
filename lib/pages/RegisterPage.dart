@@ -26,7 +26,7 @@ class _RegisterPage extends State<RegisterPage> {
         children: <Widget>[
           Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 8,
+            height: MediaQuery.of(context).size.height / 7.5,
             decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
