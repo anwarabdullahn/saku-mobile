@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saku_mobile/pages/HomePage.dart';
 import 'package:saku_mobile/pages/RegisterPage.dart';
 import './pages/LoginPage.dart';
 
@@ -11,12 +12,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.blueGrey,
       ),
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (BuildContext context) => LoginPage(),
-        '/register': (BuildContext context) => RegisterPage()
+        '/register': (BuildContext context) => RegisterPage(),
+        '/home': (BuildContext context) => HomePage(),
       },
     );
   }

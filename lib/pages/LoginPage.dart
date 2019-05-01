@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:saku_mobile/bloc/login.dart';
 import 'package:saku_mobile/widgets/Input.dart';
 import '../widgets/button.dart';
 
@@ -19,6 +20,9 @@ class _LoginPage extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    void onSubmit(BuildContext context) =>
+        Navigator.pushReplacementNamed(context, '/home');
+
     return Scaffold(
         body: Container(
       color: Colors.white12,
@@ -31,10 +35,7 @@ class _LoginPage extends State<LoginPage> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0xFF7AB1CE),
-                    Color(0xFF698DBE),
-                  ],
+                  colors: [Color(0xFF7AB1CE), Color(0xFF4B5F6B)],
                 ),
                 borderRadius:
                     BorderRadius.only(bottomLeft: Radius.circular(90))),
@@ -70,17 +71,21 @@ class _LoginPage extends State<LoginPage> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                 child: Input(
+                    onChange: (e) => loginBloc.emailChange.add(e),
                     inputText: 'Email',
                     inputIcon: Icon(Icons.email, color: Colors.grey),
-                    inputType: TextInputType.emailAddress),
+                    inputType: TextInputType.emailAddress,
+                    stream: loginBloc.emailTxt),
               ),
               Container(
                 margin: EdgeInsets.only(top: 15),
                 child: Input(
+                    onChange: (e) => loginBloc.passwordChange.add(e),
                     inputText: 'Password',
                     inputIcon: Icon(Icons.vpn_key, color: Colors.grey),
                     inputType: TextInputType.emailAddress,
-                    isPassword: true),
+                    isPassword: true,
+                    stream: loginBloc.passwordTxt),
               ),
               Align(
                 alignment: Alignment.centerRight,
@@ -90,7 +95,15 @@ class _LoginPage extends State<LoginPage> {
                   onPressed: () {},
                 ),
               ),
-              Button(text: 'Login', isPrimary: true, onPress: () {}),
+              StreamBuilder<bool>(
+                  stream: loginBloc.submitBtn,
+                  builder: (context, snapshot) {
+                    return Button(
+                        text: 'Login',
+                        isPrimary: true,
+                        onPress: () =>
+                            snapshot.hasData ? onSubmit(context) : null);
+                  }),
               Button(
                   text: 'Dont Have an Account?',
                   onPress: () => Navigator.pushNamed(context, '/register'))

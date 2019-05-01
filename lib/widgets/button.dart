@@ -18,7 +18,7 @@ class Button extends StatelessWidget {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: isPrimary
-                ? [Color(0xFF7AB1CE), Color(0xFF698DBE)]
+                ? [Color(0xFF7AB1CE), Color(0xFF4B5F6B)]
                 : [Color(0xFF585A60), Color(0xFF585A60)]),
       ),
       child: Center(
