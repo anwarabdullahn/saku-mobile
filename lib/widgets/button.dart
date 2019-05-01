@@ -24,7 +24,9 @@ class Button extends StatelessWidget {
           onPressed: () {},
           child: Text(
             text,
-            style: TextStyle(color: Colors.white54, fontSize: 18),
+            style: TextStyle(
+                color: !isPrimary ? Colors.white54 : Colors.white,
+                fontSize: 18),
           ),
         ),
       ),

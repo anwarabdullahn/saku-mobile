@@ -21,7 +21,7 @@ class _LoginPage extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      color: Colors.white70,
+      color: Colors.white12,
       child: Column(
         children: <Widget>[
           Container(
