@@ -88,6 +88,7 @@ class _LoginPage extends State<LoginPage> {
               Container(
                 margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 decoration: BoxDecoration(
+                  boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 5)],
                   borderRadius: BorderRadius.all(Radius.circular(40)),
                   gradient: LinearGradient(
                     begin: Alignment.centerLeft,
@@ -98,9 +99,9 @@ class _LoginPage extends State<LoginPage> {
                     ],
                   ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(
+                child: Center(
+                  child: FlatButton(
+                    onPressed: () {},
                     child: Text(
                       'Login',
                       style: TextStyle(color: Colors.white, fontSize: 18),
