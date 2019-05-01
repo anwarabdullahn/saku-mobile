@@ -38,18 +38,20 @@ class _RegisterPage extends State<RegisterPage> {
                 ),
                 borderRadius:
                     BorderRadius.only(bottomLeft: Radius.circular(90))),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                Align(
-                    alignment: Alignment.bottomRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 32),
-                      child: Text(
-                        'Sign Up',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      ),
-                    ))
+                Padding(
+                    padding: const EdgeInsets.only(right: 15),
+                    child: Image.asset('assets/logo.png',
+                        height: 60, width: 60, fit: BoxFit.scaleDown)),
+                Padding(
+                  padding: const EdgeInsets.only(right: 32),
+                  child: Text(
+                    'Sign Up',
+                    style: TextStyle(color: Colors.white, fontSize: 24),
+                  ),
+                )
               ],
             ),
           ),
