@@ -3,14 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:saku_mobile/widgets/Input.dart';
 import '../widgets/button.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _LoginPage();
+    return _RegisterPage();
   }
 }
 
-class _LoginPage extends State<LoginPage> {
+class _RegisterPage extends State<RegisterPage> {
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIOverlays([]);
@@ -57,7 +57,7 @@ class _LoginPage extends State<LoginPage> {
                     child: Padding(
                       padding: const EdgeInsets.only(right: 32, bottom: 20),
                       child: Text(
-                        'Sign In',
+                        'Sign Up',
                         style: TextStyle(color: Colors.white, fontSize: 24),
                       ),
                     ))

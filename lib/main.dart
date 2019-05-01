@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saku_mobile/pages/RegisterPage.dart';
 import './pages/LoginPage.dart';
 
 void main() => runApp(MyApp());
@@ -12,7 +13,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      routes: {'/': (BuildContext context) => LoginPage()},
+      routes: {
+        '/': (BuildContext context) => LoginPage(),
+        '/register': (BuildContext context) => RegisterPage()
+      },
     );
   }
 }

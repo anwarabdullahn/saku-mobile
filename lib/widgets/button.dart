@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class Button extends StatelessWidget {
   final String text;
   final bool isPrimary;
-  Button({this.text, this.isPrimary = false});
+  final Function onPress;
+
+  Button({this.text, this.isPrimary = false, @required this.onPress});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class Button extends StatelessWidget {
       ),
       child: Center(
         child: FlatButton(
-          onPressed: () {},
+          onPressed: onPress,
           child: Text(
             text,
             style: TextStyle(
