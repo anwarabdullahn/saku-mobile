@@ -2,10 +2,13 @@ import 'dart:async';
 import './base.dart';
 import 'package:rxdart/rxdart.dart';
 import '../validation/login.dart';
+import '../resources/repository.dart';
 
 class LoginBloc extends Object with Validators implements BaseBloc {
-  Function(String) get emailChange => _emailController.sink.add;
-  Function(String) get passwordChange => _passwordController.sink.add;
+  final _repository = Repository();
+
+  StreamSink<String> get emailChange => _emailController.sink;
+  StreamSink<String> get passwordChange => _passwordController.sink;
 
   final _emailController = BehaviorSubject<String>();
   final _passwordController = BehaviorSubject<String>();
@@ -19,7 +22,9 @@ class LoginBloc extends Object with Validators implements BaseBloc {
   Stream<bool> get submitBtn =>
       Observable.combineLatest2(emailTxt, passwordTxt, (e, p) => true);
 
-  onSubmit() {}
+  onSubmit() {
+    _repository.doLogin(_emailController.value, _passwordController.value);
+  }
 
   @override
   void dispose() {

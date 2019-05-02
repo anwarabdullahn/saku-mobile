@@ -21,15 +21,12 @@ class Button extends StatelessWidget {
                 ? [Color(0xFF7AB1CE), Color(0xFF4B5F6B)]
                 : [Color(0xFF585A60), Color(0xFF585A60)]),
       ),
-      child: Center(
-        child: FlatButton(
-          onPressed: onPress,
-          child: Text(
-            text,
-            style: TextStyle(
-                color: !isPrimary ? Colors.white54 : Colors.white,
-                fontSize: 18),
-          ),
+      child: FlatButton(
+        onPressed: onPress,
+        child: Text(
+          text,
+          style: TextStyle(
+              color: !isPrimary ? Colors.white54 : Colors.white, fontSize: 18),
         ),
       ),
     );

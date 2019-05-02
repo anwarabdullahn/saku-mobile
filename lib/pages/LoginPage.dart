@@ -102,7 +102,7 @@ class _LoginPage extends State<LoginPage> {
                         text: 'Login',
                         isPrimary: true,
                         onPress: () =>
-                            snapshot.hasData ? onSubmit(context) : null);
+                            snapshot.hasData ? loginBloc.onSubmit() : null);
                   }),
               Button(
                   text: 'Dont Have an Account?',
