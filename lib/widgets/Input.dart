@@ -5,7 +5,6 @@ class Input extends StatelessWidget {
   final String inputText;
   final TextInputType inputType;
   final bool isPassword;
-  final Stream stream;
   final Function onChange;
 
   Input(
@@ -13,7 +12,6 @@ class Input extends StatelessWidget {
       @required this.inputIcon,
       this.inputType = TextInputType.text,
       this.isPassword = false,
-      this.stream,
       this.onChange});
 
   @override
@@ -29,19 +27,17 @@ class Input extends StatelessWidget {
                 color: Colors.white,
                 boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 5)],
                 borderRadius: BorderRadius.all(Radius.circular(50))),
-            child: StreamBuilder<String>(
-                stream: stream,
-                builder: (context, snapshot) => TextField(
-                      onChanged: onChange,
-                      style: TextStyle(fontSize: 14),
-                      obscureText: isPassword,
-                      keyboardType: inputType,
-                      autofocus: false,
-                      decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: inputText,
-                          icon: inputIcon),
-                    )),
+            child: TextField(
+              onChanged: onChange,
+              style: TextStyle(fontSize: 14),
+              obscureText: isPassword,
+              keyboardType: inputType,
+              autofocus: false,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: inputText,
+                  icon: inputIcon),
+            ),
           )
         ],
       ),
