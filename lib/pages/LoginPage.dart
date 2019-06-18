@@ -89,7 +89,7 @@ class _LoginPage extends State<LoginPage> {
                     ),
                     Button(text: 'Login', isPrimary: true, onPress: () {}),
                     Button(
-                      text: 'Dont Have an Account?',
+                      text: 'Don\'t Have an Account?',
                       onPress: () => Navigator.pushNamed(context, '/register'),
                     )
                   ],

@@ -20,6 +20,15 @@ class MyApp extends StatelessWidget {
         '/register': (BuildContext context) => RegisterPage(),
         '/home': (BuildContext context) => HomePage(),
       },
+      // onGenerateRoute: (RouteSettings settings) {
+      //   switch (settings.name) {
+      //     case '/register':
+      //       SlideRightRoute(widget: RegisterPage());
+      //       break;
+      //     default:
+      //       return null;
+      //   }
+      // },
     );
   }
 }
